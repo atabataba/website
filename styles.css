@@ -4,13 +4,6 @@
   --brand-name: #BDD9BF;
   --ink: #111;
   --pad: clamp(12px, 2vw, 24px);
-
-  /* Arrow controls */
-  --arrow-top: 28px;        /* move arrow up/down from the top */
-  --arrow-width: 56px;      /* overall arrow width */
-  --arrow-shaft-w: 14px;    /* shaft thickness */
-  --arrow-shaft-h: 34px;    /* shaft height */
-  --arrow-head-h: 26px;     /* triangle height */
 }
 
 * {
@@ -57,7 +50,6 @@ body {
   margin: 0;
   text-transform: uppercase;
   color: var(--brand-name);
-  font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
   line-height: 1.02;
@@ -70,7 +62,7 @@ body {
   display: block;
 }
 
-/* ===== OVERLAY IMAGES ===== */
+/* ===== OVERLAYS ===== */
 
 .overlay-top,
 .overlay-bottom {
@@ -83,29 +75,27 @@ body {
   top: 400px;
   right: 80px;
   width: 150px;
-  opacity: 0.95;
 }
 
 .overlay-bottom {
   bottom: 60px;
   right: 80px;
   width: 150px;
-  opacity: 0.95;
 }
 
 /* =====================================================
-   DOWN ARROW (safe add-on: does not affect other elements)
+   SCROLL ARROW — VISIBLE, SAFE
    ===================================================== */
 
 .scroll-arrow {
   position: absolute;
   left: 50%;
-  top: var(--arrow-top);
+  top: 32px;
   transform: translateX(-50%);
-  width: var(--arrow-width);
-  height: calc(var(--arrow-shaft-h) + var(--arrow-head-h));
+  width: 56px;
+  height: 72px;
   display: block;
-  z-index: 4; /* above overlays + dark layer */
+  z-index: 5;
   cursor: pointer;
 }
 
@@ -115,27 +105,29 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  width: var(--arrow-shaft-w);
-  height: var(--arrow-shaft-h);
-  background: #000;
+  width: 14px;
+  height: 36px;
+  background: #fff;
   transform: translateX(-50%);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
 }
 
-/* head */
+/* arrow head */
 .scroll-arrow::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 0;
+  top: 36px;
   width: 0;
   height: 0;
-  border-left: calc(var(--arrow-width) / 2) solid transparent;
-  border-right: calc(var(--arrow-width) / 2) solid transparent;
-  border-top: var(--arrow-head-h) solid #000;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 30px solid #fff;
   transform: translateX(-50%);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
 }
 
-/* subtle bounce (optional) */
+/* subtle motion */
 @keyframes arrow-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(8px); }
@@ -159,8 +151,6 @@ body {
   margin: 0 auto;
   padding: 120px 40px;
 }
-
-/* LEFT SIDE = quote + hall + zazen */
 
 .mission-left {
   display: flex;
@@ -192,68 +182,6 @@ body {
   border-radius: 6px;
 }
 
-/* Individual spacing */
-.hall {
-  margin-top: 6rem;
-}
-
-.zazen {
-  margin-top: 8rem;
-}
-
-/* ===== RIGHT SIDE ===== */
-
-.mission-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.mission-right p {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 1rem;
-}
-
-/* CTA */
-
-.mission-cta {
-  margin-top: 3rem;
-}
-
-.mission-cta a {
-  color: var(--ink);
-  text-decoration: underline;
-  opacity: 0.85;
-}
-
-.mission-cta a:hover {
-  opacity: 1;
-}
-
-/* BIOGRAPHY */
-
-.bio-section {
-  margin-top: 4rem;
-  max-width: 60ch;
-}
-
-.bio-title {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.bio-section p {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 1rem;
-}
-
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
@@ -267,15 +195,5 @@ body {
   .mission-right {
     padding: 0;
     align-items: center;
-  }
-
-  .dogen-quote {
-    max-width: 30ch;
-    margin: 0 auto 2rem;
-  }
-
-  .bio-section {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
