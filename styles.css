@@ -216,14 +216,14 @@ body {
 
 .schedule-section {
   margin-top: 4rem;
-  max-width: 60ch; /* matches bio-section */
+  max-width: 60ch; /* matches bio-section width */
 }
 
 .schedule-title {
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 /* CTA */
@@ -260,31 +260,4 @@ body {
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.6;
-  margin: 0 0 1rem;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 900px) {
-  .mission-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 80px 24px;
-  }
-
-  .mission-left,
-  .mission-right {
-    padding: 0;
-    align-items: center;
-  }
-
-  .dogen-quote {
-    max-width: 30ch;
-    margin: 0 auto 2rem;
-  }
-
-  .bio-section {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+  margin: 0 0 1rem
