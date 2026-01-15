@@ -212,6 +212,20 @@ body {
   margin: 0 0 1rem;
 }
 
+/* ===== SCHEDULE (EMPTY FOR NOW) ===== */
+
+.schedule-section {
+  margin-top: 4rem;
+  max-width: 60ch; /* matches bio-section */
+}
+
+.schedule-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
 /* CTA */
 
 .mission-cta {
