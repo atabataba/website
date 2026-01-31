@@ -77,37 +77,42 @@ body {
 }
 
 /* =====================================================
-   CHEVRON ARROW (SVG) — BOTTOM CENTER OF HERO
+   V CHEVRON ARROW — BOTTOM CENTER OF HERO (VISIBLE)
    ===================================================== */
 .scroll-chev {
   position: absolute;
   left: 50%;
   bottom: 22px;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 9999;
 
-  /* click target */
-  width: 68px;
-  height: 52px;
+  width: 82px;
+  height: 56px;
   display: grid;
   place-items: center;
 
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 
-  /* helps visibility on photo backgrounds */
-  background: rgba(0, 0, 0, 0.28);
+  /* This background is what makes it visible even on a bright photo */
+  background: rgba(0, 0, 0, 0.38);
   border-radius: 999px;
+
+  /* Optional: adds separation from the image */
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 
   opacity: 0.95;
-  transition: opacity 160ms ease, background 160ms ease;
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
 }
 
 .scroll-chev:hover {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.scroll-chev:active {
+  transform: translateX(-50%) translateY(1px);
 }
 
 .scroll-chev:focus-visible {
@@ -115,23 +120,23 @@ body {
   outline-offset: 4px;
 }
 
+/* SVG chevron */
 .scroll-chev-icon {
-  width: 40px;
-  height: 24px;
+  width: 44px;
+  height: 26px;
   display: block;
 }
 
 .scroll-chev-icon path {
   fill: none;
   stroke: #fff;
-  stroke-width: 10;          /* thick like your reference */
-  stroke-linecap: square;    /* sharper ends */
-  stroke-linejoin: miter;    /* crisp corner */
-
+  stroke-width: 10;         /* thick like your reference */
+  stroke-linecap: square;   /* sharp ends */
+  stroke-linejoin: miter;   /* crisp corner */
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.85));
 }
 
-/* subtle bounce */
+/* subtle bounce (optional) */
 @keyframes chev-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%      { transform: translateX(-50%) translateY(6px); }
