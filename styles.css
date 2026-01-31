@@ -77,58 +77,59 @@ body {
 }
 
 /* =====================================================
-   SCROLL ARROW (ADDED — DOES NOT TOUCH YOUR OTHER STYLES)
+   SMALL "V" CHEVRON SCROLL INDICATOR (BOTTOM CENTER)
    ===================================================== */
-.scroll-arrow {
+.scroll-chev {
   position: absolute;
   left: 50%;
-  top: 32px; /* move up/down */
+  bottom: 24px;
   transform: translateX(-50%);
-  width: 56px; /* overall width */
-  height: 72px; /* overall height */
-  display: block;
+  width: 34px;
+  height: 22px;
   z-index: 5;
+  display: block;
   cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 160ms ease;
 }
 
-/* shaft */
-.scroll-arrow::before {
+.scroll-chev:hover { opacity: 1; }
+
+/* draw the V using two lines */
+.scroll-chev::before,
+.scroll-chev::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 14px; /* shaft thickness */
-  height: 36px; /* shaft length */
+  top: 8px;
+  width: 18px;
+  height: 2px;
   background: #fff;
-  transform: translateX(-50%);
+  transform-origin: center;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
 }
 
-/* arrow head */
-.scroll-arrow::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 36px; /* lines up with shaft height */
-  width: 0;
-  height: 0;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  border-top: 30px solid #fff; /* triangle height */
-  transform: translateX(-50%);
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
+.scroll-chev::before {
+  left: 3px;
+  transform: rotate(45deg);
 }
 
-/* subtle motion */
-@keyframes arrow-bounce {
+.scroll-chev::after {
+  right: 3px;
+  transform: rotate(-45deg);
+}
+
+/* subtle bounce */
+@keyframes chev-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  50%      { transform: translateX(-50%) translateY(6px); }
 }
 
-.scroll-arrow { animation: arrow-bounce 1.6s ease-in-out infinite; }
+.scroll-chev {
+  animation: chev-bounce 1.6s ease-in-out infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-arrow { animation: none; }
+  .scroll-chev { animation: none; }
 }
 
 /* ===== MISSION SECTION ===== */
@@ -307,7 +308,5 @@ body {
     row-gap: 0.1rem;
   }
 
-  .schedule-time {
-    opacity: 0.8;
-  }
+  .schedule-time { opacity: 0.8; }
 }
