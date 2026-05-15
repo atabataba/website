@@ -214,14 +214,14 @@ body {
 .feature-image {
   display: block;
 
-  /* larger than column without affecting text width */
-  width: 140%;
-  max-width: 560px;
+  /* slightly larger than the column */
+  width: 115%;
+  max-width: 440px;
 
-  height: 420px;
+  height: 320px;
   object-fit: cover;
 
-  margin-left: -90px;
+  margin-left: -35px;
 
   border-radius: 6px;
 }
