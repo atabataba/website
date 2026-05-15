@@ -182,41 +182,49 @@ body {
   margin: 0 auto;
   padding: 120px 40px;
 }
+/* ===== LEFT SIDE ===== */
 
-/* LEFT SIDE = quote + hall + zazen */
 .mission-left {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   padding-left: 40px;
+
+  /* important: allows images to extend outward */
+  overflow: visible;
 }
 
-.dogen-quote {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  line-height: 1.5;
-  max-width: 22ch;
-  margin: 0;
-}
+/* ===== IMAGE COLUMN ===== */
 
-.quote-author {
-  display: block;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  opacity: 0.8;
-}
-
-.left-image {
-  display: block;
+.image-column {
   width: 100%;
-  max-width: 350px;
-  margin: 2.5rem auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  margin-top: 5rem;
+
+  align-items: center;
+}
+
+/* ===== FEATURE IMAGES ===== */
+
+.feature-image {
+  display: block;
+
+  /* larger than column without affecting text width */
+  width: 140%;
+  max-width: 560px;
+
+  height: 420px;
+  object-fit: cover;
+
+  margin-left: -90px;
+
   border-radius: 6px;
 }
-
-/* Individual spacing */
-.hall { margin-top: 6rem; }
-.zazen { margin-top: 8rem; }
 
 /* ===== RIGHT SIDE ===== */
 .mission-title {
