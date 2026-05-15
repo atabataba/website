@@ -6,8 +6,13 @@
   --pad: clamp(12px, 2vw, 24px);
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -17,6 +22,7 @@ body {
 }
 
 /* ===== HERO ===== */
+
 .hero {
   min-height: 100vh;
   position: relative;
@@ -35,7 +41,8 @@ body {
   z-index: 0;
 }
 
-/* ===== TITLE BLOCK (TITLE + SUBTITLE) ===== */
+/* ===== TITLE BLOCK ===== */
+
 .hero-titleblock {
   position: absolute;
   top: var(--pad);
@@ -44,6 +51,7 @@ body {
 }
 
 /* ===== TITLE ===== */
+
 .site-title {
   margin: 0;
   text-transform: uppercase;
@@ -56,9 +64,12 @@ body {
   font-size: clamp(22px, 3.8vw, 44px);
 }
 
-.site-title span { display: block; }
+.site-title span {
+  display: block;
+}
 
-/* ===== SUBTITLE (NEW) ===== */
+/* ===== SUBTITLE ===== */
+
 .site-subtitle {
   margin: 10px 0 0;
   padding: 0;
@@ -69,18 +80,19 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 
-  /* smaller than title */
   font-size: clamp(14px, 1.6vw, 22px);
 
-  /* keep the two lines tight */
   line-height: 1.05;
   letter-spacing: 0.06em;
   opacity: 0.95;
 }
 
-.site-subtitle span { display: block; }
+.site-subtitle span {
+  display: block;
+}
 
 /* ===== OVERLAY IMAGES ===== */
+
 .overlay-top,
 .overlay-bottom {
   position: absolute;
@@ -102,9 +114,8 @@ body {
   opacity: 0.95;
 }
 
-/* =====================================================
-   V CHEVRON ARROW — BOTTOM CENTER OF HERO (VISIBLE)
-   ===================================================== */
+/* ===== SCROLL CHEVRON ===== */
+
 .scroll-chev {
   position: absolute;
   left: 50%;
@@ -114,11 +125,11 @@ body {
 
   width: 82px;
   height: 56px;
+
   display: grid;
   place-items: center;
 
   text-decoration: none;
-  cursor: pointer;
 
   background: rgba(0, 0, 0, 0.38);
   border-radius: 999px;
@@ -127,7 +138,11 @@ body {
   -webkit-backdrop-filter: blur(2px);
 
   opacity: 0.95;
-  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
 }
 
 .scroll-chev:hover {
@@ -159,10 +174,14 @@ body {
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.85));
 }
 
-/* subtle bounce (optional) */
 @keyframes chev-bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(6px); }
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
 }
 
 .scroll-chev {
@@ -170,29 +189,52 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-chev { animation: none; }
+  .scroll-chev {
+    animation: none;
+  }
 }
 
 /* ===== MISSION SECTION ===== */
+
 .mission-section {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
+  align-items: start;
+
   gap: 60px;
+
   max-width: 1200px;
+
   margin: 0 auto;
+
   padding: 120px 40px;
 }
+
 /* ===== LEFT SIDE ===== */
 
 .mission-left {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  padding-left: 40px;
+/* ===== QUOTE ===== */
 
-  /* important: allows images to extend outward */
-  overflow: visible;
+.dogen-quote {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1.5;
+  max-width: 22ch;
+  margin: 0;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
 /* ===== IMAGE COLUMN ===== */
@@ -202,27 +244,29 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-
-  margin-top: 5rem;
 
   align-items: center;
+
+  gap: 3rem;
+
+  margin-top: 3rem;
 }
+
+/* ===== FEATURE IMAGES ===== */
 
 .feature-image {
   display: block;
 
   width: 100%;
-  max-width: 240px;
+  max-width: 360px;
 
   height: auto;
-
-  margin: 0 auto;
 
   border-radius: 6px;
 }
 
 /* ===== RIGHT SIDE ===== */
+
 .mission-title {
   font-family: var(--font-serif);
   font-weight: 700;
@@ -237,8 +281,11 @@ body {
   margin: 0 0 1rem;
 }
 
-/* CTA */
-.mission-cta { margin-top: 3rem; }
+/* ===== CTA ===== */
+
+.mission-cta {
+  margin-top: 3rem;
+}
 
 .mission-cta a {
   color: var(--ink);
@@ -246,9 +293,12 @@ body {
   opacity: 0.85;
 }
 
-.mission-cta a:hover { opacity: 1; }
+.mission-cta a:hover {
+  opacity: 1;
+}
 
-/* BIOGRAPHY */
+/* ===== BIOGRAPHY ===== */
+
 .bio-section {
   margin-top: 4rem;
   max-width: 60ch;
@@ -269,6 +319,7 @@ body {
 }
 
 /* ===== SCHEDULE ===== */
+
 .schedule-section {
   margin-top: 4rem;
   max-width: 60ch;
@@ -288,7 +339,9 @@ body {
   margin: 0 0 1rem;
 }
 
-.schedule-parenthetical { opacity: 0.8; }
+.schedule-parenthetical {
+  opacity: 0.8;
+}
 
 .schedule-grid {
   display: grid;
@@ -301,6 +354,7 @@ body {
   grid-template-columns: 7ch 1fr;
   column-gap: 1rem;
   align-items: baseline;
+
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.6;
@@ -325,10 +379,14 @@ body {
   margin: 0 0 1rem;
 }
 
-.visit-commitment { margin-top: 2rem; }
+.visit-commitment {
+  margin-top: 2rem;
+}
 
 /* ===== RESPONSIVE ===== */
+
 @media (max-width: 900px) {
+
   .hero-titleblock {
     left: 24px;
   }
@@ -350,12 +408,21 @@ body {
     margin: 0 auto 2rem;
   }
 
-  .bio-section { margin-left: auto; margin-right: auto; }
+  .bio-section {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .schedule-item {
     grid-template-columns: 1fr;
     row-gap: 0.1rem;
   }
 
-  .schedule-time { opacity: 0.8; }
+  .schedule-time {
+    opacity: 0.8;
+  }
+
+  .feature-image {
+    max-width: 100%;
+  }
 }
