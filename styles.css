@@ -209,19 +209,15 @@ body {
   align-items: center;
 }
 
-/* ===== FEATURE IMAGES ===== */
-
 .feature-image {
   display: block;
 
-  /* slightly larger than the column */
-  width: 115%;
-  max-width: 440px;
+  width: 100%;
+  max-width: 420px;
 
-  height: 320px;
-  object-fit: cover;
+  height: auto;
 
-  margin-left: -35px;
+  margin: 0 auto;
 
   border-radius: 6px;
 }
